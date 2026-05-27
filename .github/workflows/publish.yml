@@ -8,10 +8,10 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository_owner }}/${{ github.repository }}
-  RELEASE_BRANCH: refs/heads/main
-  SHOULD_PUSH_IMAGE: ${{ (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev')) || github.event_name == 'workflow_dispatch' }}
+  RELEASE_BRANCH: refs/heads/master
+  SHOULD_PUSH_IMAGE: ${{ (github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')) || github.event_name == 'workflow_dispatch' }}
 
-  BASE_IMAGE_TAG: "v4.14.0"
+  BASE_IMAGE_TAG: "v4.14.0-ce"
 
 jobs:
   build-publish-amd64:
